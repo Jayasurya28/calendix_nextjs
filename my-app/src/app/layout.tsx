@@ -12,7 +12,13 @@ import "./globals.css";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
-const noto = Noto_Sans({subsets: ['latin'], weight: ['300','400' ,'700']});
+const noto = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+});
 
 export const metadata: Metadata = {
   title: "Calendix",
@@ -27,10 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={noto.className}>
-      <main className="container">
-        <Header />
-
-      
+      <main className="container"> 
+        <Header/>     
         {children}
       </main>
       </body>
